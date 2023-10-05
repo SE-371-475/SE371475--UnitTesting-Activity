@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
     Calculator calculator;
+    CalculatorClassActivity calc;
 
     //  The method annotated with @BeforeEach runs before each test
     @BeforeEach
@@ -18,6 +19,32 @@ class CalculatorTest {
 
     //  A method annotated with @Test defines a test method
 //  @DisplayName can be used to define the name of the test which is displayed to the user
+
+    void setUpActivity() {
+        calc = new CalculatorClassActivity();
+    }
+
+    @Test
+    void testGet() {
+
+        setUpActivity();
+        assertEquals(0, calc.getValue());
+    }
+
+    @Test
+    void testAdd() {
+        setUpActivity();
+        calc.add(5);
+        assertEquals(5, calc.getValue());
+    }
+
+    @Test
+    void testSubtract() {
+        setUpActivity();
+        calc.subtract(5);
+        assertEquals(-5, calc.getValue());
+    }
+
     @Test
     @DisplayName("Simple multiplication should work")
 //    @Disabled("The method changed - Fix later")  //marks a test to be disabled.
