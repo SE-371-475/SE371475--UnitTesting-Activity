@@ -26,13 +26,13 @@ public class CalculatorClassActivityTest {
     @Test
     void testAdding7() {
         calculator.add(7);
-        assertEquals(7, calculator.getValue());
+        assertEquals(7, calculator.getValue(), "Adding 7 to initial value should work");
     }
 
     @DisplayName("Confirming subtracting 10 from initial value")
     @Test
     void testSubtracting10() {
         calculator.subtract(10);
-        assertEquals(-10, calculator.getValue());
+        assertEquals(-10, calculator.getValue(), "Subtracting 10 to initial value should work");
     }
 }
