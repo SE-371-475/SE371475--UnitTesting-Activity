@@ -3,36 +3,37 @@ package com.depaul.gsd;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Tests for Calculator Class Activity")
-public class CalculatorClassActivityTest {
+@DisplayName("Calculator tests activity: Anh Luong")
+class CalculatorClassActivityTest {
     CalculatorClassActivity calculator;
-
-    //  The method annotated with @BeforeEach runs before each test
     @BeforeEach
-    void setUp() {
-        calculator = new CalculatorClassActivity();
-    }
-
-    @DisplayName("Confirming the inital value is 0")
+    void setUp() { calculator = new CalculatorClassActivity(); }
     @Test
-    void testInitialValue() {
-        assertEquals(0, calculator.getValue(), "Initial value should work");
+    @DisplayName("Initialization should work")
+    void testInitialization() {
+        assertEquals(0, calculator.getValue(),"Regular initialization should work");
     }
-
-    @DisplayName("Confirming adding 7 to the initial value")
+    @DisplayName("Simple addition should work")
     @Test
-    void testAdding7() {
+    void testAdditionOf7() {
         calculator.add(7);
-        assertEquals(7, calculator.getValue(), "Adding 7 to initial value should work");
+        assertEquals(7, calculator.getValue(), "Regular addition should work");
     }
 
-    @DisplayName("Confirming subtracting 10 from initial value")
+    @DisplayName("Simple subtraction should work")
     @Test
-    void testSubtracting10() {
+    void testSubtractionOf10() {
         calculator.subtract(10);
-        assertEquals(-10, calculator.getValue(), "Subtracting 10 to initial value should work");
+        assertEquals(-10, calculator.getValue(), "Regular subtraction should work");
+    }
+
+    @DisplayName("Simple getValue should work")
+    @Test
+    void getValue0f7() {
+        calculator.add(7);
+        int num = calculator.getValue();
+        assertEquals(7, num, "getValue should work");
     }
 }
