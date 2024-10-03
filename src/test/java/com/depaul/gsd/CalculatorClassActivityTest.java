@@ -13,7 +13,7 @@ class CalculatorClassActivityTest {
     @Order(1)
     @DisplayName("Ensures that inital value is 0")
     void initiateValue() {
-        assertEquals(0, calculatorClassActivity.getValue());
+        assertEquals(0, calculatorClassActivity.getValue(), "Initial value should be 0");
     }
 
     @Test
@@ -24,7 +24,7 @@ class CalculatorClassActivityTest {
         int expected = 7;
         int actual = calculatorClassActivity.getValue();
 
-        assertEquals(expected, actual);
+        assertEquals(expected, actual, "simple addition 7 from 0 should be 7");
     }
 
     @Test
@@ -35,7 +35,7 @@ class CalculatorClassActivityTest {
         int expected = -10;
         int actual = calculatorClassActivity.getValue();
 
-        assertEquals(expected, actual);
+        assertEquals(expected, actual, "simple subtraction 10 from 0 should be -10");
     }
 
 }
