@@ -29,7 +29,8 @@ class CalculatorTest {
     //  @RepeatedTest defines that this test method will be executed multiple times, in this example 5 times
     @RepeatedTest(5)
     @DisplayName("Ensure correct handling of zero")
-    void testMultiplyWithZero() {
+    void testMultiplyWithZero() 
+    {
 
 //        Skip the test if executed on Windows.
 //        Assumptions.assumeTrue(System.getProperty("os.name").contains("Linux"));
@@ -37,4 +38,35 @@ class CalculatorTest {
         assertEquals(0, calculator.multiply(0, 5), "Multiple with zero should be zero");
         assertEquals(0, calculator.multiply(5, 0), "Multiple with zero should be zero");
     }
+
+    public void TestInitialValue()
+    {
+        //test case 1:Confirm the initial value is 0
+        CalculatorTest Test1=new CalculatorTest();
+        test1.testMultiplyWithZero();
+
+    }
+    public void TestAddingToInitialValue()
+    {
+        //Test case 2: Confirm adding 7 to the initial value
+        CalculatorTestParam Test2=new CalculatorTestParam();
+        int initialValueA=1;
+        int initialvalueB=1;
+        Test2.testWithStringParameter(initialValueA,initialvalueB);
+        initialValueA+=7
+        Test2.testWithStringParameter(initialValueA,initialvalueB);
+    }
+    public void TestSubstractFromInitialValue()
+    {
+        //Test case 3: Confirm subtracting 10 from initial value
+        CalculatorTestParam Test3=new CalculatorTestParam();
+        int initialValueA=20;
+        int initialvalueB=1;
+        Test2.testWithStringParameter(initialValueA,initialvalueB);
+        initialValueA= initialValueA-10;
+        Test2.testWithStringParameter(initialValueA,initialvalueB);
+    }
+
+    }
+}
 }
