@@ -43,7 +43,6 @@ class CalculatorClassActivityTest {
     @Test
     void getValue() {
         CalculatorClassActivity calculator = new CalculatorClassActivity();
-
         assertEquals(0, calculator.getValue());
 
     }
