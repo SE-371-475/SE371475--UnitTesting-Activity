@@ -19,7 +19,8 @@ class CalculatorClassActivityTest {
     @DisplayName("Addition should work properly")
     void add() {
         int expectedResult = 7;
-        int actualResult = calculatorClassActivity.getValue() + 7;
+        calculatorClassActivity.add(7);
+        int actualResult = calculatorClassActivity.getValue();
         assertEquals(expectedResult, actualResult);
     }
 
@@ -28,7 +29,8 @@ class CalculatorClassActivityTest {
     @DisplayName("Subtraction should work properly")
     void subtract() {
         int expectedResult = -10;
-        int actualResult = calculatorClassActivity.getValue() - 10;
+        calculatorClassActivity.subtract(10);
+        int actualResult = calculatorClassActivity.getValue();
         assertEquals(expectedResult, actualResult);
     }
 
