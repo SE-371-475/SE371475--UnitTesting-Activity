@@ -1,36 +1,48 @@
 package com.depaul.gsd;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class CalculatorClassActivityTest {
+import static org.junit.jupiter.api.Assertions.*;
+@DisplayName("Lamees: CalculatorClassActivityTest")
+class CalculatorClassActivityTest {
+    CalculatorClassActivity calculator;
 
-
+    @BeforeEach
+    void setUp() {
+      calculator = new CalculatorClassActivity();
+    }
     @Test
-    @DisplayName("Test Get Value")
-    void testGetValue() {
-        CalculatorClassActivity calculatorClassActivity = new CalculatorClassActivity();
-        int expectedValue = 0;
-        assertEquals(expectedValue, calculatorClassActivity.getValue());
+    @DisplayName("Initial value should be 0")
+    void isInitialValueZero() {
+        int expected = 0;
+        int actual = calculator.getValue();
+        assertEquals(expected,actual,"initial value should be 0");
+
+
     }
 
-    @Test 
-    @DisplayName("Test Add")
-    void testAdd() {
-        CalculatorClassActivity calculatorClassActivity = new CalculatorClassActivity();
-        calculatorClassActivity.add(7);
-        int expectedValue = 7;
-        assertEquals(expectedValue, calculatorClassActivity.getValue());
+    @Test
+    void add() {
+        int expected = 7;
+        calculator.add(7);
+        int actual = calculator.getValue();
+        assertEquals(expected,actual, "result should be 7");
     }
 
     @Test
-    @DisplayName("Test Subtract")
-    void testSubtract() {
-        CalculatorClassActivity calculatorClassActivity = new CalculatorClassActivity();
-        calculatorClassActivity.subtract(10);
-        int expectedValue = -10;
-        assertEquals(expectedValue, calculatorClassActivity.getValue());
+    void subtract() {
+        int expected = -10;
+        calculator.subtract(10);
+        int actual = calculator.getValue();
+        assertEquals(expected,actual,"should return -10");
+    }
+
+    @Test
+    void getValue() {
     }
 }
+
+
+
