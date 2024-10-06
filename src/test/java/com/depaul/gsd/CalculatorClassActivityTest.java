@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-@DisplayName("Lamees: CalculatorClassActivityTest")
+@DisplayName("Garner: CalculatorClassActivityTest")
 class CalculatorClassActivityTest {
     CalculatorClassActivity calculator;
 
@@ -25,18 +25,17 @@ class CalculatorClassActivityTest {
 
     @Test
     void add() {
-        int expected = 7;
+        
         calculator.add(7);
         int actual = calculator.getValue();
-        assertEquals(expected,actual, "result should be 7");
+        assertEquals(7,actual, "result should be 7");
     }
 
     @Test
     void subtract() {
         int expected = -10;
         calculator.subtract(10);
-        int actual = calculator.getValue();
-        assertEquals(expected,actual,"should return -10");
+        assertEquals(expected, calculator.getValue(), "Should be -10");
     }
 
     @Test
