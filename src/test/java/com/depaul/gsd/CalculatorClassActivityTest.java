@@ -39,4 +39,9 @@ class CalculatorClassActivityTest {
         assertEquals(expected, actual, "Calculator should have value of 10 after subtracting 10");
     }
 
+    @Test
+    void getValue() {
+        
+    }
+
 }
