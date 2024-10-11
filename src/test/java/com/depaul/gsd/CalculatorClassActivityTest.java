@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-@DisplayName("Lamees: CalculatorClassActivityTest")
+@DisplayName("Megan Davis: CalculatorClassActivityTest")
 class CalculatorClassActivityTest {
     CalculatorClassActivity calculator;
 
@@ -13,34 +13,30 @@ class CalculatorClassActivityTest {
     void setUp() {
       calculator = new CalculatorClassActivity();
     }
+
     @Test
-    @DisplayName("Initial value should be 0")
-    void isInitialValueZero() {
-        int expected = 0;
+    @DisplayName("Confirm that 5 is being added to the initial value")
+    void testAdd() {
+        int expected = 5;
+        calculator.add(5);
         int actual = calculator.getValue();
-        assertEquals(expected,actual,"initial value should be 0");
-
-
+        assertEquals(expected,actual, "the result should be 5");
     }
 
     @Test
-    void add() {
-        int expected = 7;
-        calculator.add(7);
+    @DisplayName("Confirm that 15 is being subtracted from initial value.")
+    void testSubtract() {
+        int expected = -15;
+        calculator.subtract(15);
         int actual = calculator.getValue();
-        assertEquals(expected,actual, "result should be 7");
+        assertEquals(expected,actual,"should return -15");
     }
+    
 
     @Test
-    void subtract() {
-        int expected = -10;
-        calculator.subtract(10);
-        int actual = calculator.getValue();
-        assertEquals(expected,actual,"should return -10");
-    }
-
-    @Test
-    void getValue() {
+    @DisplayName("Confirm that the starting value is 0.")
+    void testGetValue() {
+    	assertEquals(0, calculator.getValue());
     }
 }
 
